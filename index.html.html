@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AfroExpress — France ↔ Congo</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--v:#00B86B;--j:#FFD700;--n:#0A0A0A;--gf:#141414;--g:#1E1E1E;--w:#FAFAF7;--bd:rgba(255,255,255,0.08);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--n);color:var(--w);font-family:'Outfit',sans-serif;overflow-x:hidden;}
+.page{display:none!important;}.page.on{display:block!important;}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(10,10,10,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;gap:8px;letter-spacing:-1px;}
+.logo .a{color:var(--v);}
+.pill{background:var(--v);color:var(--n);font-size:.48rem;padding:3px 7px;border-radius:100px;letter-spacing:1.5px;font-family:'Space Mono',monospace;font-weight:700;}
+.nlnks{display:flex;gap:22px;list-style:none;}
+.nlnks a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.82rem;cursor:pointer;transition:color .2s;font-weight:500;}
+.nlnks a:hover{color:var(--w);}
+.navr{display:flex;gap:9px;}
+.nb{padding:9px 18px;border-radius:8px;font-family:'Syne',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;border:none;transition:all .2s;}
+.nbg{background:var(--v);color:var(--n);}.nbg:hover{background:#00d47c;}
+.nbo{background:transparent;color:var(--w);border:1px solid var(--bd);}.nbo:hover{border-color:var(--v);color:var(--v);}
+sec{display:block;padding:72px 40px;}
+.dark{background:var(--gf);}
+.lbl{font-family:'Space Mono',monospace;font-size:.66rem;color:var(--v);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
+.ttl{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3.5vw,2.9rem);font-weight:800;letter-spacing:-1.5px;margin-bottom:36px;line-height:1.1;}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 40px 80px;position:relative;overflow:hidden;}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(0,184,107,.10),transparent 60%),linear-gradient(160deg,#0A0A0A 60%,#0d1a12);z-index:0;}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,184,107,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,184,107,.04) 1px,transparent 1px);background-size:60px 60px;z-index:0;}
+.hero>*{position:relative;z-index:1;}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,184,107,.12);border:1px solid rgba(0,184,107,.3);border-radius:100px;padding:6px 16px;font-family:'Space Mono',monospace;font-size:.68rem;color:var(--v);letter-spacing:1px;margin-bottom:24px;}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--v);box-shadow:0 0 8px var(--v);animation:pd 2s infinite;}
+@keyframes pd{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,6.5vw,5.8rem);font-weight:800;line-height:1;letter-spacing:-3px;max-width:720px;margin-bottom:20px;}
+.g{color:var(--v);}.y{color:var(--j);}
+.rrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+.ctag{display:flex;align-items:center;gap:8px;background:var(--gf);border:1px solid var(--bd);padding:8px 14px;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;}
+.hdesc{font-size:.95rem;color:rgba(255,255,255,.6);max-width:480px;line-height:1.75;margin-bottom:36px;}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap;}
+.bp{background:var(--v);color:var(--n);padding:13px 30px;border-radius:10px;font-weight:700;font-family:'Syne',sans-serif;cursor:pointer;border:none;transition:all .25s;box-shadow:0 0 36px rgba(0,184,107,.3);font-size:.92rem;}
+.bp:hover{background:#00d47c;transform:translateY(-2px);}
+.bs{background:transparent;color:var(--w);padding:13px 30px;border-radius:10px;font-weight:600;font-family:'Syne',sans-serif;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:all .25s;font-size:.92rem;}
+.bs:hover{border-color:var(--v);color:var(--v);}
+.hstats{position:absolute;right:40px;bottom:80px;display:flex;flex-direction:column;gap:14px;}
+.sc{background:var(--gf);border:1px solid var(--bd);padding:16px 22px;border-radius:14px;text-align:right;}
+.sn{font-family:'Syne',sans-serif;font-weight:800;font-size:1.75rem;color:var(--v);line-height:1;}
+.sl{font-size:.7rem;color:rgba(255,255,255,.4);margin-top:4px;}
+.tbox{background:var(--gf);border:1px solid var(--bd);border-radius:20px;padding:32px;max-width:740px;}
+.tbox h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.2rem;}
+.tform{display:flex;gap:10px;margin-top:18px;}
+.ti{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--bd);border-radius:10px;padding:12px 16px;color:var(--w);font-family:'Space Mono',monospace;font-size:.85rem;letter-spacing:1.5px;outline:none;transition:border-color .2s;}
+.ti:focus{border-color:var(--v);}
+.ti::placeholder{color:rgba(255,255,255,.25);letter-spacing:0;}
+.btk{background:var(--v);color:var(--n);border:none;border-radius:10px;padding:12px 24px;font-weight:700;cursor:pointer;font-family:'Syne',sans-serif;transition:all .2s;white-space:nowrap;}
+.btk:hover{background:#00d47c;}
+.trkres{margin-top:22px;display:none;}
+.trkres.on{display:block;}
+.tsteps{display:flex;margin-top:12px;}
+.tstep{flex:1;text-align:center;position:relative;}
+.tstep::after{content:'';position:absolute;top:12px;left:50%;right:-50%;height:2px;background:var(--bd);z-index:0;}
+.tstep:last-child::after{display:none;}
+.tdot{width:24px;height:24px;border-radius:50%;border:2px solid var(--bd);background:var(--gf);margin:0 auto 8px;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;font-size:.6rem;}
+.tdot.done{background:var(--v);border-color:var(--v);}
+.tdot.cur{border-color:var(--v);box-shadow:0 0 12px var(--v);animation:ps 1.5s infinite;}
+@keyframes ps{0%,100%{box-shadow:0 0 8px var(--v);}50%{box-shadow:0 0 20px var(--v);}}
+.tlbl{font-size:.66rem;color:rgba(255,255,255,.4);}
+.tlbl.done{color:var(--v);}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.card{background:var(--gf);border:1px solid var(--bd);border-radius:18px;padding:28px 22px;transition:all .3s;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top left,rgba(0,184,107,.07),transparent 70%);opacity:0;transition:opacity .3s;}
+.card:hover{border-color:rgba(0,184,107,.35);transform:translateY(-4px);}
+.card:hover::before{opacity:1;}
+.ci{font-size:2.3rem;margin-bottom:14px;display:block;}
+.card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:9px;}
+.card p{color:rgba(255,255,255,.5);line-height:1.6;font-size:.86rem;}
+.cprice{margin-top:14px;padding-top:14px;border-top:1px solid var(--bd);font-family:'Space Mono',monospace;color:var(--v);font-size:.76rem;}
+.ab{border-radius:16px;padding:26px;}
+.abok{background:rgba(0,184,107,.08);border:1px solid rgba(0,184,107,.25);}
+.abno{background:rgba(230,57,70,.07);border:1px solid rgba(230,57,70,.2);}
+.ab h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;margin-bottom:14px;}
+.abno h3{color:#ff6b75;}
+.tags{display:flex;flex-wrap:wrap;gap:7px;}
+.tok{background:rgba(0,184,107,.15);border:1px solid rgba(0,184,107,.3);padding:4px 11px;border-radius:7px;font-size:.78rem;color:var(--v);}
+.tno{background:rgba(230,57,70,.12);border:1px solid rgba(230,57,70,.25);padding:4px 11px;border-radius:7px;font-size:.78rem;color:#ff6b75;}
+.atarif{background:linear-gradient(135deg,rgba(0,184,107,.12),rgba(255,215,0,.06));border:1px solid rgba(0,184,107,.3);border-radius:16px;padding:26px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;margin-top:28px;}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.tc{background:var(--gf);border:1px solid var(--bd);border-radius:20px;padding:32px 24px;position:relative;}
+.tc.feat{border-color:var(--v);background:linear-gradient(145deg,#0d1f16,var(--gf));}
+.tbdg{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--v);color:var(--n);font-family:'Space Mono',monospace;font-size:.6rem;font-weight:700;padding:4px 12px;border-radius:100px;white-space:nowrap;}
+.tc h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;margin-bottom:6px;}
+.tpri{font-family:'Syne',sans-serif;font-weight:800;font-size:2.4rem;color:var(--v);line-height:1;margin:14px 0;}
+.tpri span{font-size:.88rem;color:rgba(255,255,255,.4);font-weight:400;}
+.tdesc{color:rgba(255,255,255,.4);font-size:.82rem;margin-bottom:22px;}
+.tfeats{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:26px;}
+.tfeats li{display:flex;align-items:center;gap:8px;font-size:.84rem;color:rgba(255,255,255,.75);}
+.tfeats li::before{content:'✓';color:var(--v);font-weight:700;}
+.btt{display:block;text-align:center;padding:11px;border-radius:10px;font-weight:700;font-family:'Syne',sans-serif;font-size:.86rem;cursor:pointer;border:none;width:100%;transition:all .2s;}
+.bto{background:transparent;color:var(--w);border:1px solid var(--bd);}.bto:hover{border-color:var(--v);color:var(--v);}
+.btf{background:var(--v);color:var(--n);}.btf:hover{background:#00d47c;}
+.ttbl{margin-top:32px;background:var(--gf);border:1px solid var(--bd);border-radius:14px;overflow:hidden;}
+.ttbl table{width:100%;border-collapse:collapse;font-size:.84rem;}
+.ttbl th{padding:12px 18px;text-align:left;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.3);text-transform:uppercase;border-bottom:1px solid var(--bd);background:rgba(0,184,107,.08);}
+.ttbl td{padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.04);}
+.ttbl tr:last-child td{border-bottom:none;}
+.dw{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
+.dform{background:var(--gf);border:1px solid var(--bd);border-radius:22px;padding:36px 32px;}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fg{margin-bottom:14px;}
+.fg label{display:block;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.4);margin-bottom:6px;letter-spacing:.5px;text-transform:uppercase;}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:9px;padding:10px 13px;color:var(--w);font-family:'Outfit',sans-serif;font-size:.86rem;outline:none;transition:border-color .2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--v);}
+.fg select option{background:#1e1e1e;}
+.fg textarea{resize:vertical;min-height:75px;}
+.bsub{width:100%;background:var(--v);color:var(--n);border:none;border-radius:11px;padding:14px;font-weight:700;font-size:.92rem;cursor:pointer;font-family:'Syne',sans-serif;transition:all .25s;}
+.bsub:hover{background:#00d47c;transform:translateY(-2px);}
+.icards{display:flex;flex-direction:column;gap:12px;}
+.icard{display:flex;gap:13px;align-items:flex-start;background:var(--gf);border:1px solid var(--bd);border-radius:13px;padding:16px;}
+.icard h4{font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;margin-bottom:3px;}
+.icard p{color:rgba(255,255,255,.4);font-size:.78rem;}
+.pgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:44px;position:relative;}
+.pgrid::before{content:'';position:absolute;top:30px;left:60px;right:60px;height:1px;background:linear-gradient(90deg,transparent,var(--v),transparent);}
+.pst{text-align:center;padding:0 10px;}
+.pnum{width:60px;height:60px;border-radius:50%;background:var(--gf);border:2px solid var(--bd);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Space Mono',monospace;font-weight:700;font-size:.95rem;color:var(--v);position:relative;z-index:1;}
+.pst h4{font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;margin-bottom:5px;}
+.pst p{color:rgba(255,255,255,.4);font-size:.75rem;line-height:1.5;}
+.zgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.zc{background:var(--gf);border:1px solid var(--bd);border-radius:18px;padding:28px;}
+.zflag{font-size:2.5rem;margin-bottom:12px;display:block;}
+.zc h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;margin-bottom:4px;}
+.zsub{color:rgba(255,255,255,.4);font-size:.82rem;margin-bottom:18px;}
+.cw{display:flex;flex-wrap:wrap;gap:6px;}
+.cty{background:rgba(255,255,255,.06);border:1px solid var(--bd);padding:4px 10px;border-radius:6px;font-size:.74rem;color:rgba(255,255,255,.6);}
+.cty.m{background:rgba(0,184,107,.12);border-color:rgba(0,184,107,.3);color:var(--v);}
+.faqlist{max-width:720px;}
+.fi{border-bottom:1px solid var(--bd);}
+.fq{display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;font-family:'Syne',sans-serif;font-weight:600;font-size:.92rem;transition:color .2s;}
+.fq:hover{color:var(--v);}
+.fch{font-size:1.05rem;transition:transform .3s;color:var(--v);}
+.fi.open .fch{transform:rotate(180deg);}
+.fa{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s;color:rgba(255,255,255,.5);font-size:.86rem;line-height:1.7;}
+.fi.open .fa{max-height:300px;padding-bottom:16px;}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.cc{background:var(--gf);border:1px solid var(--bd);border-radius:16px;padding:28px 22px;text-align:center;transition:all .3s;}
+.cc:hover{border-color:rgba(0,184,107,.35);transform:translateY(-4px);}
+.cc .cci{font-size:2.2rem;margin-bottom:12px;display:block;}
+.cc h4{font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:8px;}
+.cc p{color:rgba(255,255,255,.4);font-size:.82rem;line-height:1.65;}
+.cc a{color:var(--v);text-decoration:none;font-weight:600;}
+.ogrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px;}
+.oc{background:var(--gf);border:1px solid var(--bd);border-radius:14px;padding:22px;}
+.oc h4{font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;margin-bottom:10px;}
+.oc p{color:rgba(255,255,255,.4);font-size:.82rem;line-height:1.9;}
+footer{background:var(--gf);border-top:1px solid var(--bd);padding:44px 40px 26px;}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px;}
+.fb p{color:rgba(255,255,255,.35);font-size:.82rem;line-height:1.7;margin-top:12px;max-width:250px;}
+.fcol h5{font-family:'Syne',sans-serif;font-weight:700;font-size:.86rem;margin-bottom:16px;}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.fcol ul a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.82rem;transition:color .2s;cursor:pointer;}
+.fcol ul a:hover{color:var(--v);}
+.fbot{border-top:1px solid var(--bd);padding-top:22px;display:flex;justify-content:space-between;align-items:center;}
+.fbot p{color:rgba(255,255,255,.2);font-size:.74rem;}
+.fmono{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--v);}
+.wa{position:fixed;bottom:26px;left:26px;z-index:998;background:#25D366;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 20px rgba(37,211,102,.5);text-decoration:none;transition:transform .2s;}
+.wa:hover{transform:scale(1.1);}
+.toast{position:fixed;bottom:26px;right:26px;z-index:9999;background:var(--v);color:var(--n);padding:11px 20px;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:.86rem;transform:translateY(80px);opacity:0;transition:all .35s;}
+.toast.show{transform:translateY(0);opacity:1;}
+/* ADMIN */
+.adm{display:flex;height:100vh;overflow:hidden;}
+.sb{width:220px;background:var(--gf);border-right:1px solid var(--bd);display:flex;flex-direction:column;height:100vh;flex-shrink:0;padding:22px 0;}
+.sbl{padding:0 18px 22px;border-bottom:1px solid var(--bd);font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-.5px;}
+.sbl span{color:var(--v);}
+.sbl small{display:block;font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(255,255,255,.3);font-weight:400;margin-top:4px;}
+.sbn{padding:14px 10px;flex:1;}
+.sbi{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;cursor:pointer;margin-bottom:4px;font-size:.84rem;font-weight:500;color:rgba(255,255,255,.5);transition:all .2s;}
+.sbi:hover{background:rgba(255,255,255,.05);color:var(--w);}
+.sbi.on{background:rgba(0,184,107,.12);color:var(--v);font-weight:600;}
+.sbfoot{padding:14px 18px 0;border-top:1px solid var(--bd);font-size:.72rem;color:rgba(255,255,255,.25);}
+.sbfoot span{color:var(--v);cursor:pointer;text-decoration:underline;}
+.am{flex:1;overflow-y:auto;padding:26px 28px;}
+.av{display:none;}.av.on{display:block;}
+.topb{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;}
+.topb h1{font-family:'Syne',sans-serif;font-weight:800;font-size:1.6rem;letter-spacing:-1px;}
+.topba{display:flex;gap:9px;}
+.btn{padding:8px 16px;border-radius:9px;font-family:'Syne',sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;border:none;transition:all .2s;}
+.btng{background:var(--v);color:var(--n);}.btng:hover{background:#00d47c;}
+.btno{background:transparent;color:var(--w);border:1px solid var(--bd);}.btno:hover{border-color:var(--v);color:var(--v);}
+.btnr{background:rgba(230,57,70,.15);color:#ff6b75;border:1px solid rgba(230,57,70,.25);}
+.btnb{background:rgba(58,134,255,.15);color:#3A86FF;border:1px solid rgba(58,134,255,.25);}
+.btnsm{padding:5px 11px;font-size:.74rem;}
+.kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
+.kc{background:var(--gf);border:1px solid var(--bd);border-radius:13px;padding:18px 20px;}
+.klbl{font-size:.7rem;color:rgba(255,255,255,.35);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;}
+.kval{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;line-height:1;}
+.kval.g{color:var(--v);}.kval.y{color:var(--j);}.kval.b{color:#3A86FF;}.kval.o{color:#FB8500;}
+.ctrls{display:flex;gap:9px;margin-bottom:18px;flex-wrap:wrap;}
+.si{flex:1;min-width:160px;background:var(--gf);border:1px solid var(--bd);border-radius:10px;padding:9px 13px;color:var(--w);font-family:'Outfit',sans-serif;font-size:.86rem;outline:none;transition:border-color .2s;}
+.si:focus{border-color:var(--v);}
+.si::placeholder{color:rgba(255,255,255,.25);}
+.fsl{background:var(--gf);border:1px solid var(--bd);border-radius:10px;padding:9px 13px;color:var(--w);font-family:'Outfit',sans-serif;font-size:.83rem;outline:none;cursor:pointer;}
+.fsl option{background:#1e1e1e;}
+.bx{background:var(--gf);border:1px solid var(--bd);border-radius:14px;overflow:hidden;}
+.bxh{padding:14px 20px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;}
+.bxh h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;}
+.cbdg{background:rgba(0,184,107,.12);border:1px solid rgba(0,184,107,.25);color:var(--v);padding:3px 10px;border-radius:100px;font-family:'Space Mono',monospace;font-size:.66rem;}
+table{width:100%;border-collapse:collapse;}
+thead tr{background:rgba(255,255,255,.03);}
+th{padding:11px 16px;text-align:left;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.3);letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--bd);white-space:nowrap;}
+td{padding:12px 16px;font-size:.84rem;border-bottom:1px solid rgba(255,255,255,.03);vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(255,255,255,.015);}
+.cn{font-weight:600;}.cid{font-family:'Space Mono',monospace;font-size:.66rem;color:rgba(255,255,255,.3);}
+.bdg{display:inline-block;padding:3px 8px;border-radius:6px;font-size:.68rem;font-weight:600;white-space:nowrap;}
+.bv{background:rgba(0,184,107,.15);color:var(--v);}
+.by2{background:rgba(255,215,0,.12);color:var(--j);}
+.br2{background:rgba(230,57,70,.15);color:#ff6b75;}
+.bb2{background:rgba(58,134,255,.15);color:#3A86FF;}
+.bo2{background:rgba(251,133,0,.15);color:#FB8500;}
+.abtns{display:flex;gap:6px;}
+.emst{text-align:center;padding:44px 18px;color:rgba(255,255,255,.2);}
+.emst .ei{font-size:2.5rem;margin-bottom:12px;}
+.emst p{font-size:.86rem;}
+.mo{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;}
+.mo.open{opacity:1;pointer-events:all;}
+.md{background:var(--g);border:1px solid var(--bd);border-radius:20px;padding:30px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;transform:translateY(20px);transition:transform .25s;}
+.mo.open .md{transform:translateY(0);}
+.md h2{font-family:'Syne',sans-serif;font-weight:800;font-size:1.25rem;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;}
+.mx{cursor:pointer;background:none;border:none;color:rgba(255,255,255,.4);font-size:1.25rem;}
+.mfr{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.mfg{margin-bottom:13px;}
+.mfg label{display:block;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.4);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;}
+.mfg input,.mfg select,.mfg textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:8px;padding:10px 12px;color:var(--w);font-family:'Outfit',sans-serif;font-size:.86rem;outline:none;transition:border-color .2s;}
+.mfg input:focus,.mfg select:focus,.mfg textarea:focus{border-color:var(--v);}
+.mfg select option{background:#2a2a2a;}
+.mfg textarea{resize:vertical;min-height:60px;}
+.mfoot{display:flex;gap:9px;justify-content:flex-end;margin-top:18px;}
+.fo{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.8);display:flex;align-items:flex-start;justify-content:flex-end;opacity:0;pointer-events:none;transition:opacity .25s;}
+.fo.open{opacity:1;pointer-events:all;}
+.fp{background:var(--g);border-left:1px solid var(--bd);width:380px;height:100vh;overflow-y:auto;padding:26px 22px;transform:translateX(100%);transition:transform .3s;}
+.fo.open .fp{transform:translateX(0);}
+.fav{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--v),#007A47);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:1.25rem;color:var(--n);}
+.fnm{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;margin:9px 0 3px;}
+.fci{font-family:'Space Mono',monospace;font-size:.66rem;color:rgba(255,255,255,.3);}
+.fsec{margin-bottom:18px;background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:11px;padding:14px;}
+.fsec h4{font-family:'Syne',sans-serif;font-weight:700;font-size:.76rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1px;margin-bottom:11px;}
+.fr2{display:flex;justify-content:space-between;margin-bottom:8px;gap:10px;}
+.fl{color:rgba(255,255,255,.4);font-size:.79rem;flex-shrink:0;}
+.fv{color:var(--w);font-size:.84rem;text-align:right;}
+.cmin{background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:8px;padding:9px 11px;margin-bottom:7px;}
+.cref{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--v);}
+.cinf{font-size:.79rem;color:rgba(255,255,255,.5);margin-top:3px;}
+/* HAMBURGER */
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;}
+.ham span{display:block;width:22px;height:2px;background:var(--w);border-radius:2px;transition:all .3s;}
+.mob-menu{display:none;position:fixed;top:56px;left:0;right:0;z-index:998;background:rgba(10,10,10,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);padding:16px 20px;flex-direction:column;gap:0;}
+.mob-menu.open{display:flex;}
+.mob-menu a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.95rem;font-weight:500;cursor:pointer;padding:13px 0;border-bottom:1px solid var(--bd);display:block;}
+.mob-menu a:last-child{border-bottom:none;}
+.mob-menu a:hover{color:var(--v);}
+/* WA MODAL */
+.wa-modal{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;}
+.wa-modal.open{opacity:1;pointer-events:all;}
+.wa-box{background:var(--g);border:1px solid var(--bd);border-radius:20px;padding:32px 28px;max-width:400px;width:90%;text-align:center;}
+.wa-box h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;margin-bottom:8px;}
+.wa-box p{color:rgba(255,255,255,.5);font-size:.88rem;margin-bottom:24px;line-height:1.6;}
+.wa-btns{display:flex;flex-direction:column;gap:12px;}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 20px;border-radius:12px;font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;border:none;text-decoration:none;transition:all .2s;}
+.wa-btn.fr{background:#25D366;color:#fff;}.wa-btn.fr:hover{background:#1db954;}
+.wa-btn.cg{background:#00B86B;color:var(--n);}.wa-btn.cg:hover{background:#00d47c;}
+.wa-cancel{margin-top:12px;background:none;border:none;color:rgba(255,255,255,.4);font-size:.85rem;cursor:pointer;font-family:'Outfit',sans-serif;}
+@media(max-width:900px){
+  nav{padding:13px 18px;}
+  .nlnks{display:none;}
+  .ham{display:flex;}
+  .navr .nb:not(.nbg){display:none;}
+  .hero{padding:90px 20px 60px;}.hstats{display:none;}
+  sec{padding:55px 20px;}
+  .grid3,.tgrid,.cgrid,.pgrid,.zgrid,.ogrid{grid-template-columns:1fr;}
+  .pgrid::before{display:none;}.dw,.grid2,.fr,.mfr{grid-template-columns:1fr;}
+  .ftop{grid-template-columns:1fr 1fr;}.kgrid{grid-template-columns:1fr 1fr;}
+  .adm{flex-direction:column;}.sb{width:100%;height:auto;padding:10px 14px;}
+  .sbn{display:flex;padding:0 10px;flex:1;}.sbfoot{display:none;}
+  .am{height:auto;padding:18px 14px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo" onclick="goSite()">Afro<span class="a">Express</span><span class="pill">FR·CG</span></div>
+  <ul class="nlnks">
+    <li><a onclick="sc('#services')">Services</a></li>
+    <li><a onclick="sc('#alimentation')">Alimentation</a></li>
+    <li><a onclick="sc('#collecte')">Collecte</a></li>
+    <li><a onclick="sc('#tarifs')">Tarifs</a></li>
+    <li><a onclick="sc('#devis')">Devis</a></li>
+    <li><a onclick="sc('#contact')">Contact</a></li>
+  </ul>
+  <div class="navr">
+    <button class="nb nbo" onclick="goAdmin()">🔒 Admin</button>
+    <button class="nb nbg" onclick="sc('#devis')">Envoyer un colis →</button>
+    <button class="ham" onclick="toggleMenu()" id="hamBtn"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MENU MOBILE -->
+<div class="mob-menu" id="mobMenu">
+  <a onclick="mobSc('#services')">📦 Services</a>
+  <a onclick="mobSc('#alimentation')">🥗 Alimentation</a>
+  <a onclick="mobSc('#collecte')">🚐 Collecte domicile</a>
+  <a onclick="mobSc('#tarifs')">💶 Tarifs</a>
+  <a onclick="mobSc('#devis')">📝 Devis gratuit</a>
+  <a onclick="mobSc('#contact')">📞 Contact</a>
+  <a onclick="goAdmin();closeMob()">🔒 Admin</a>
+</div>
+
+<!-- MODAL WHATSAPP CHOIX PAYS -->
+<div class="wa-modal" id="waModal">
+  <div class="wa-box">
+    <div style="font-size:2rem;margin-bottom:12px;">💬</div>
+    <h3>Choisissez votre pays</h3>
+    <p>Sélectionnez le pays depuis lequel vous envoyez votre demande pour être mis en relation avec le bon numéro.</p>
+    <div class="wa-btns">
+      <a class="wa-btn fr" id="waFR" href="#" target="_blank" rel="noopener" onclick="document.getElementById('waModal').classList.remove('open')">🇫🇷 Je suis en France<br><span style="font-size:.8rem;font-weight:400;opacity:.85">+33 7 58 92 69 63</span></a>
+      <a class="wa-btn cg" id="waCG" href="#" target="_blank" rel="noopener" onclick="document.getElementById('waModal').classList.remove('open')">🇨🇬 Je suis au Congo<br><span style="font-size:.8rem;font-weight:400;opacity:.85">067 303 239</span></a>
+    </div>
+    <button class="wa-cancel" onclick="document.getElementById('waModal').classList.remove('open')">Annuler</button>
+  </div>
+</div>
+
+<!-- SITE -->
+<div class="page on" id="pg-site">
+
+<section class="hero" id="hero">
+  <div class="hbg"></div><div class="hgrid"></div>
+  <div class="hbadge"><span class="dot"></span>LIVRAISON 7J/7 — FRANCE ↔ CONGO</div>
+  <h1>Expédition<br><span class="g">France</span> ↔ <span class="y">Congo</span></h1>
+  <div class="rrow">
+    <div class="ctag">🇫🇷 France</div>
+    <span style="color:var(--v);font-family:'Space Mono',monospace;font-size:1.3rem;">⇄</span>
+    <div class="ctag">🇨🇬 Congo</div>
+  </div>
+  <p class="hdesc">Votre partenaire de confiance pour l'expédition de colis entre la France et le Congo. Rapide, sécurisé — livraison en 5 à 12 jours.</p>
+  <div class="hbtns">
+    <button class="bp" onclick="sc('#devis')">Obtenir un devis gratuit</button>
+    <button class="bs" onclick="sc('#tracker')">Suivre mon colis</button>
+  </div>
+  <div class="hstats">
+    <div class="sc"><div class="sn">12 000+</div><div class="sl">Colis expédiés</div></div>
+    <div class="sc"><div class="sn">98.4%</div><div class="sl">Satisfaction</div></div>
+    <div class="sc"><div class="sn">5–12j</div><div class="sl">Délai moyen</div></div>
+  </div>
+</section>
+
+<sec class="dark" id="tracker">
+  <div class="lbl">SUIVI EN TEMPS RÉEL</div>
+  <h2 class="ttl">Tracez votre colis</h2>
+  <div class="tbox">
+    <h3><span style="color:var(--v)">📦</span> Suivi de colis</h3>
+    <p style="color:rgba(255,255,255,.4);font-size:.8rem;margin-top:7px;">Ex: AEX-2026-FR-47291 · AEX-2026-CG-11042</p>
+    <div class="tform">
+      <input class="ti" id="trki" placeholder="Numéro de suivi…">
+      <button class="btk" onclick="track()">Rechercher</button>
+    </div>
+    <div class="trkres" id="trkr">
+      <p style="color:rgba(255,255,255,.5);font-size:.8rem;margin-bottom:12px;">📍 Mise à jour : <span style="color:var(--v)" id="trkd"></span></p>
+      <div class="tsteps" id="trks"></div>
+    </div>
+  </div>
+</sec>
+
+<sec id="services">
+  <div class="lbl">NOS SERVICES</div>
+  <h2 class="ttl">Ce que nous proposons</h2>
+  <div class="grid3">
+    <div class="card"><span class="ci">⚡</span><h3>Express Premium</h3><p>Livraison garantie en 5–7 jours ouvrés. Idéal pour les envois urgents.</p><div class="cprice">18€/kg · Suivi temps réel</div></div>
+    <div class="card"><span class="ci">📦</span><h3>Standard Essentiel</h3><p>Livraison en 8–12 jours. Parfaite pour les envois courants.</p><div class="cprice">10€/kg · Suivi inclus</div></div>
+    <div class="card"><span class="ci">🥗</span><h3>Alimentation</h3><p>Manioc, épices, conserves, légumes secs… Tous aliments non périssables.</p><div class="cprice">12€/kg · Conditionnement soigné</div></div>
+    <div class="card"><span class="ci">🏗️</span><h3>Fret & Gros Volumes</h3><p>Palettes, machines, équipements industriels. Devis sur demande.</p><div class="cprice">Devis personnalisé</div></div>
+    <div class="card"><span class="ci">📄</span><h3>Documents Officiels</h3><p>Actes notariaux, dossiers administratifs — traçabilité renforcée.</p><div class="cprice">35€/envoi · Assurance comprise</div></div>
+    <div class="card"><span class="ci">🏢</span><h3>Solutions Entreprises</h3><p>Tarifs dégressifs, compte dédié, facturation mensuelle.</p><div class="cprice">Tarifs sur mesure</div></div>
+  </div>
+</sec>
+
+<sec class="dark" id="alimentation">
+  <div class="lbl">SERVICE SPÉCIAL</div>
+  <h2 class="ttl">Envoi d'alimentation 🥗</h2>
+  <p style="color:rgba(255,255,255,.55);max-width:580px;line-height:1.75;margin-bottom:32px;">Nous expédions <strong style="color:var(--w)">tous les aliments non périssables</strong> — manioc, épices, conserves, huile, farine, céréales et bien plus.</p>
+  <div class="grid2">
+    <div class="ab abok">
+      <h3>✅ Aliments acceptés</h3>
+      <div class="tags"><span class="tok">Manioc sec</span><span class="tok">Feuilles séchées</span><span class="tok">Épices</span><span class="tok">Huile de palme</span><span class="tok">Conserves</span><span class="tok">Haricots secs</span><span class="tok">Farine de manioc</span><span class="tok">Arachides</span><span class="tok">Riz/Céréales</span><span class="tok">Poisson fumé</span><span class="tok">Viande fumée/séchée</span><span class="tok">Légumes secs</span><span class="tok">Condiments</span><span class="tok">+ Tous non périssables</span></div>
+    </div>
+    <div class="ab abno">
+      <h3>❌ Non acceptés</h3>
+      <div class="tags"><span class="tno">Viande fraîche</span><span class="tno">Poisson frais</span><span class="tno">Produits laitiers frais</span><span class="tno">Fruits frais</span><span class="tno">Légumes frais</span><span class="tno">Tout aliment périssable</span></div>
+      <p style="color:rgba(255,255,255,.3);font-size:.78rem;margin-top:14px;">En cas de doute, contactez-nous avant l'envoi.</p>
+    </div>
+  </div>
+  <div class="atarif">
+    <div>
+      <div style="font-family:'Space Mono',monospace;font-size:.66rem;color:var(--v);margin-bottom:7px;letter-spacing:2px;">TARIF ALIMENTATION</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2.2rem;">12€ <span style="font-size:.9rem;color:rgba(255,255,255,.4);font-weight:400;">/ kg</span></div>
+    </div>
+    <button class="bp" onclick="sc('#devis')">Envoyer de la nourriture →</button>
+  </div>
+</sec>
+
+<sec id="collecte">
+  <div class="lbl">SERVICE DOMICILE</div>
+  <h2 class="ttl">Collecte & Livraison à domicile 🚐</h2>
+  <p style="color:rgba(255,255,255,.55);max-width:580px;line-height:1.75;margin-bottom:32px;">Nous venons <strong style="color:var(--w)">chercher votre colis chez vous</strong> en France, et le livrons chez votre destinataire au Congo.</p>
+  <div class="grid3">
+    <div class="card"><span class="ci">🏠</span><h3>Retrait domicile</h3><p>Un agent se déplace chez vous pour récupérer votre colis.</p><div class="cprice">25€ forfait retrait</div></div>
+    <div class="card"><span class="ci">🚪</span><h3>Livraison domicile</h3><p>Votre destinataire reçoit son colis directement chez lui.</p><div class="cprice">25€ forfait livraison</div></div>
+    <div class="card"><span class="ci">🔄</span><h3>Aller-retour complet</h3><p>Retrait en France + livraison au Congo. Service tout inclus.</p><div class="cprice">50€ retrait + livraison</div></div>
+  </div>
+</sec>
+
+<sec class="dark" id="tarifs">
+  <div class="lbl">TARIFICATION</div>
+  <h2 class="ttl">Nos formules</h2>
+  <div class="tgrid">
+    <div class="tc">
+      <h3>Essentiel</h3><div class="tpri">10€ <span>/ kg</span></div>
+      <p class="tdesc">Pour les envois courants.</p>
+      <ul class="tfeats"><li>Délai 8–12 jours</li><li>Suivi en ligne inclus</li><li>Livraison à domicile</li><li>Dédouanement assisté</li><li>Poids min. 1 kg</li></ul>
+      <button class="btt bto" onclick="sc('#devis')">Choisir Essentiel</button>
+    </div>
+    <div class="tc feat">
+      <div class="tbdg">⭐ LE PLUS POPULAIRE</div>
+      <h3>Express</h3><div class="tpri">18€ <span>/ kg</span></div>
+      <p class="tdesc">Notre service phare pour les envois prioritaires.</p>
+      <ul class="tfeats"><li>Délai 5–7 jours</li><li>Suivi temps réel</li><li>Livraison à domicile</li><li>Dédouanement inclus</li><li>Assurance 500€ offerte</li><li>Notification WhatsApp</li></ul>
+      <button class="btt btf" onclick="sc('#devis')">Choisir Express</button>
+    </div>
+    <div class="tc">
+      <h3>Pro & Entreprise</h3><div class="tpri">Sur <span>devis</span></div>
+      <p class="tdesc">Tarifs négociés pour volumes importants.</p>
+      <ul class="tfeats"><li>Délai prioritaire</li><li>Gestionnaire dédié</li><li>Facturation mensuelle</li><li>Assurance sur mesure</li><li>Enlèvement entrepôt</li></ul>
+      <button class="btt bto" onclick="sc('#contact')">Nous contacter</button>
+    </div>
+  </div>
+  <div class="ttbl">
+    <table>
+      <thead><tr><th>Type d'envoi</th><th>Essentiel</th><th>Express</th><th>+ Collecte domicile</th></tr></thead>
+      <tbody>
+        <tr><td>📦 Colis standard</td><td style="color:var(--v);font-family:'Space Mono',monospace;">10€/kg</td><td style="color:var(--v);font-family:'Space Mono',monospace;">18€/kg</td><td style="color:rgba(255,255,255,.4);font-size:.8rem;">+25€</td></tr>
+        <tr><td>🥗 Alimentation</td><td style="color:var(--v);font-family:'Space Mono',monospace;">12€/kg</td><td style="color:var(--v);font-family:'Space Mono',monospace;">20€/kg</td><td style="color:rgba(255,255,255,.4);font-size:.8rem;">+25€</td></tr>
+        <tr><td>📄 Documents</td><td style="color:var(--v);font-family:'Space Mono',monospace;">35€/envoi</td><td style="color:var(--v);font-family:'Space Mono',monospace;">50€/envoi</td><td style="color:rgba(255,255,255,.4);font-size:.8rem;">+25€</td></tr>
+        <tr><td>🏗️ Fret</td><td colspan="3" style="color:rgba(255,255,255,.4);text-align:center;font-size:.83rem;">Devis personnalisé — contactez-nous</td></tr>
+      </tbody>
+    </table>
+  </div>
+</sec>
+
+<sec id="devis">
+  <div class="dw">
+    <div class="dform">
+      <div class="lbl" style="margin-bottom:6px;">DEVIS GRATUIT</div>
+      <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.5rem;margin-bottom:24px;letter-spacing:-.5px;">Demandez votre<br>devis en 2 minutes</h3>
+      <div class="fr">
+        <div class="fg"><label>Prénom & Nom</label><input type="text" placeholder="Jean Mbemba"></div>
+        <div class="fg"><label>Téléphone/WhatsApp</label><input type="tel" placeholder="+33 6 00 00 00 00"></div>
+      </div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="jean@exemple.fr"></div>
+      <div class="fr">
+        <div class="fg"><label>Direction</label><select><option>🇫🇷 France → 🇨🇬 Congo</option><option>🇨🇬 Congo → 🇫🇷 France</option></select></div>
+        <div class="fg"><label>Type de colis</label><select><option>Effets personnels</option><option>Alimentation</option><option>Électronique</option><option>Vêtements</option><option>Documents officiels</option><option>Médicaments</option><option>Autre</option></select></div>
+      </div>
+      <div class="fr">
+        <div class="fg"><label>Poids estimé (kg)</label><input type="number" placeholder="5" min="1"></div>
+        <div class="fg"><label>Formule</label><select><option>Express (5–7j) · 18€/kg</option><option>Essentiel (8–12j) · 10€/kg</option><option>Alimentation · 12€/kg</option><option>Entreprise/Volume</option></select></div>
+      </div>
+      <div class="fg"><label>Collecte domicile</label><select><option>Non</option><option>Retrait à domicile (+25€)</option><option>Livraison à domicile (+25€)</option><option>Retrait + Livraison (+50€)</option></select></div>
+      <div class="fg"><label>Informations complémentaires</label><textarea placeholder="Contenu, dimensions, instructions…"></textarea></div>
+      <button class="bsub" onclick="openWA('devis')">Envoyer ma demande →</button>
+    </div>
+    <div>
+      <div class="lbl">POURQUOI NOUS ?</div>
+      <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-1.5px;margin-bottom:20px;line-height:1.1;">Simple,<br>rapide<br>& <span class="g">fiable.</span></h2>
+      <p style="color:rgba(255,255,255,.5);line-height:1.75;margin-bottom:28px;">Depuis Chambray-lès-Tours et Brazzaville, notre équipe vous accompagne à chaque étape.</p>
+      <div class="icards">
+        <div class="icard"><span style="font-size:1.4rem">🔒</span><div><h4>Sécurité garantie</h4><p>Chaque colis est inventorié, emballé et assuré.</p></div></div>
+        <div class="icard"><span style="font-size:1.4rem">📱</span><div><h4>Suivi WhatsApp</h4><p>Notifications à chaque étape jusqu'à la livraison.</p></div></div>
+        <div class="icard"><span style="font-size:1.4rem">🛃</span><div><h4>Dédouanement inclus</h4><p>On gère toutes les formalités douanières.</p></div></div>
+        <div class="icard"><span style="font-size:1.4rem">💬</span><div><h4>Support bilingue 7j/7</h4><p>Disponible par téléphone et WhatsApp.</p></div></div>
+      </div>
+    </div>
+  </div>
+</sec>
+
+<sec class="dark" id="process">
+  <div class="lbl">COMMENT ÇA MARCHE</div>
+  <h2 class="ttl">5 étapes simples</h2>
+  <div class="pgrid">
+    <div class="pst"><div class="pnum">01</div><h4>Devis</h4><p>Formulaire ou WhatsApp</p></div>
+    <div class="pst"><div class="pnum">02</div><h4>Enlèvement</h4><p>On vient chez vous ou dépôt en agence</p></div>
+    <div class="pst"><div class="pnum">03</div><h4>Douane</h4><p>Vérification et déclaration</p></div>
+    <div class="pst"><div class="pnum">04</div><h4>Transit aérien</h4><p>Depuis Paris CDG</p></div>
+    <div class="pst"><div class="pnum">05</div><h4>Livraison</h4><p>Remise en main propre</p></div>
+  </div>
+</sec>
+
+<sec id="zones">
+  <div class="lbl">COUVERTURE</div>
+  <h2 class="ttl">Nos zones de collecte & livraison</h2>
+  <div class="zgrid">
+    <div class="zc">
+      <span class="zflag">🇫🇷</span><h3>France</h3>
+      <p class="zsub">Collecte dans toute la France métropolitaine</p>
+      <div class="cw"><span class="cty m">Chambray-lès-Tours (siège)</span><span class="cty m">Paris (après devis)</span><span class="cty m">Lyon</span><span class="cty">Marseille</span><span class="cty">Bordeaux</span><span class="cty">Toulouse</span><span class="cty">Nantes</span><span class="cty">Lille</span><span class="cty">+ Toute la France</span></div>
+    </div>
+    <div class="zc">
+      <span class="zflag">🇨🇬</span><h3>République du Congo</h3>
+      <p class="zsub">Livraison dans les principales villes</p>
+      <div class="cw"><span class="cty m">Brazzaville (Congo Chine)</span><span class="cty m">Pointe-Noire (Quartier SIC)</span><span class="cty">Dolisie</span><span class="cty">Nkayi</span><span class="cty">Impfondo</span><span class="cty">Ouesso</span><span class="cty">Madingou</span><span class="cty">+ Villages sur demande</span></div>
+    </div>
+  </div>
+</sec>
+
+<sec class="dark" id="faq">
+  <div class="lbl">FAQ</div>
+  <h2 class="ttl">On répond à tout</h2>
+  <div class="faqlist">
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Quels articles sont interdits ?<span class="fch">▼</span></div><div class="fa">Sont interdits : armes, stupéfiants, produits dangereux, devises au-delà des seuils douaniers. Les aliments frais (viande fraîche, poisson frais, produits laitiers) ne voyagent pas.</div></div>
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Délai France → Congo ?<span class="fch">▼</span></div><div class="fa">Express : 5–7 jours ouvrés. Essentiel : 8–12 jours ouvrés. Délais incluant le dédouanement des deux côtés.</div></div>
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Comment suivre mon colis ?<span class="fch">▼</span></div><div class="fa">Vous recevez un numéro de suivi unique dès la prise en charge. Saisissez-le dans la section "Suivi" du site. Notifications WhatsApp à chaque étape.</div></div>
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Que se passe-t-il en cas de perte ?<span class="fch">▼</span></div><div class="fa">Tous nos envois incluent une assurance de base. En cas de sinistre, indemnisation sous 48h. Notre taux de perte est de 0% depuis notre création.</div></div>
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Comment fonctionne la collecte domicile ?<span class="fch">▼</span></div><div class="fa">Contactez-nous par WhatsApp au +33 7 58 92 69 63 pour fixer un créneau. Un agent se déplace chez vous. Forfait 25€ retrait, 25€ livraison au Congo.</div></div>
+    <div class="fi"><div class="fq" onclick="tfaq(this)">Puis-je envoyer des médicaments ?<span class="fch">▼</span></div><div class="fa">Oui, sous conditions. Les médicaments doivent être déclarés avec ordonnance. Contactez-nous pour vérification préalable.</div></div>
+  </div>
+</sec>
+
+<sec id="contact">
+  <div class="lbl">NOUS JOINDRE</div>
+  <h2 class="ttl">Contactez-nous</h2>
+  <div class="cgrid">
+    <div class="cc"><span class="cci">📱</span><h4>WhatsApp France</h4><p>7j/7 de 8h à 22h<br><a href="https://wa.me/33758926963">+33 7 58 92 69 63</a><br><a href="https://wa.me/33652081327">+33 6 52 08 13 27</a></p></div>
+    <div class="cc"><span class="cci">📧</span><h4>Email</h4><p>Réponse sous 4h<br><a href="mailto:contact@afroexpress.fr">contact@afroexpress.fr</a></p></div>
+    <div class="cc"><span class="cci">📞</span><h4>Congo</h4><p>Lun–Sam 8h–18h<br><a href="tel:+242067303239">067 303 239</a></p></div>
+  </div>
+  <div class="ogrid">
+    <div class="oc"><h4>🇫🇷 France — Siège</h4><p>37170 Chambray-lès-Tours<br>Lun–Ven 9h–18h · Sam 9h–14h<br><span style="color:var(--v)">+33 7 58 92 69 63</span></p></div>
+    <div class="oc"><h4>🇫🇷 Paris</h4><p>Adresse communiquée<br><strong style="color:var(--v)">après confirmation de devis</strong><br><span style="color:var(--v)">+33 6 52 08 13 27</span></p></div>
+    <div class="oc"><h4>🇨🇬 Pointe-Noire</h4><p>Grand Marché, Quartier SIC<br><span style="color:var(--v)">067 303 239</span></p></div>
+    <div class="oc"><h4>🇨🇬 Brazzaville</h4><p>Quartier Congo Chine<br>Référence par téléphone<br><span style="color:var(--v)">067 303 239</span></p></div>
+  </div>
+</sec>
+
+<footer>
+  <div class="ftop">
+    <div class="fb"><div class="logo" onclick="goSite()">Afro<span class="a">Express</span><span class="pill">FR·CG</span></div><p>Votre partenaire de confiance pour l'expédition de colis entre la France et le Congo.</p></div>
+    <div class="fcol"><h5>Services</h5><ul><li><a onclick="sc('#services')">Express Premium</a></li><li><a onclick="sc('#services')">Essentiel</a></li><li><a onclick="sc('#alimentation')">Alimentation</a></li><li><a onclick="sc('#collecte')">Collecte domicile</a></li></ul></div>
+    <div class="fcol"><h5>Infos</h5><ul><li><a onclick="sc('#tarifs')">Tarifs</a></li><li><a onclick="sc('#zones')">Zones couvertes</a></li><li><a onclick="sc('#process')">Comment ça marche</a></li><li><a onclick="sc('#faq')">FAQ</a></li></ul></div>
+    <div class="fcol"><h5>Contact</h5><ul><li><a href="https://wa.me/33758926963">+33 7 58 92 69 63</a></li><li><a href="tel:+33652081327">+33 6 52 08 13 27</a></li><li><a href="tel:+242067303239">067 303 239 (Congo)</a></li><li><a onclick="goAdmin()" style="color:var(--v)">🔒 Admin</a></li></ul></div>
+  </div>
+  <div class="fbot"><p>© 2026 AfroExpress — Tous droits réservés</p><span class="fmono">FR ⇄ CG · 7J/7</span></div>
+</footer>
+</div><!-- /site -->
+
+<!-- ADMIN -->
+<div class="page" id="pg-admin">
+<div class="adm">
+  <aside class="sb">
+    <div class="sbl">Afro<span>Express</span><small>ADMIN · CLIENTS</small></div>
+    <nav class="sbn">
+      <div class="sbi on" onclick="aview('clients')"><span>👥</span> Clients</div>
+      <div class="sbi" onclick="aview('colis')"><span>📦</span> Colis</div>
+      <div class="sbi" onclick="aview('stats')"><span>📊</span> Stats</div>
+    </nav>
+    <div class="sbfoot"><span onclick="goSite()">← Retour au site</span></div>
+  </aside>
+  <main class="am">
+    <!-- CLIENTS -->
+    <div class="av on" id="av-clients">
+      <div class="topb"><h1>👥 Clients</h1><div class="topba"><button class="btn btno" onclick="expCSV()">⬇ CSV</button><button class="btn btng" onclick="openCM()">+ Nouveau client</button></div></div>
+      <div class="kgrid">
+        <div class="kc"><div class="klbl">Total clients</div><div class="kval g" id="k-tot">0</div></div>
+        <div class="kc"><div class="klbl">Colis ce mois</div><div class="kval y" id="k-mo">0</div></div>
+        <div class="kc"><div class="klbl">Clients France</div><div class="kval b" id="k-fr">0</div></div>
+        <div class="kc"><div class="klbl">Clients Congo</div><div class="kval o" id="k-cg">0</div></div>
+      </div>
+      <div class="ctrls">
+        <input class="si" id="srch" placeholder="🔍  Nom, téléphone, email…" oninput="rClients()">
+        <select class="fsl" id="fP" onchange="rClients()"><option value="">Tous pays</option><option>France</option><option>Congo</option></select>
+        <select class="fsl" id="fS" onchange="rClients()"><option value="">Tous services</option><option>Express</option><option>Essentiel</option><option>Alimentation</option><option>Documents</option><option>Entreprise</option></select>
+        <select class="fsl" id="fSt" onchange="rClients()"><option value="">Tous statuts</option><option>Actif</option><option>En cours</option><option>Livré</option><option>En attente</option></select>
+      </div>
+      <div class="bx">
+        <div class="bxh"><h3>Liste clients</h3><span class="cbdg" id="cnt">0</span></div>
+        <table><thead><tr><th>Client</th><th>Tél</th><th>Pays</th><th>Service</th><th>Dernier envoi</th><th>Statut</th><th>Actions</th></tr></thead>
+        <tbody id="ctb"></tbody></table>
+        <div class="emst" id="cempt" style="display:none"><div class="ei">📭</div><p>Aucun client. Ajoutez le premier !</p></div>
+      </div>
+    </div>
+    <!-- COLIS -->
+    <div class="av" id="av-colis">
+      <div class="topb"><h1>📦 Colis</h1><div class="topba"><button class="btn btng" onclick="openCoM()">+ Nouveau colis</button></div></div>
+      <div class="bx">
+        <div class="bxh"><h3>Tous les envois</h3><span class="cbdg" id="coCnt">0</span></div>
+        <table><thead><tr><th>Référence</th><th>Client</th><th>Direction</th><th>Service</th><th>Poids</th><th>Montant</th><th>Statut</th><th>Date</th></tr></thead>
+        <tbody id="cotb"></tbody></table>
+        <div class="emst" id="coempt" style="display:none"><div class="ei">📦</div><p>Aucun colis enregistré.</p></div>
+      </div>
+    </div>
+    <!-- STATS -->
+    <div class="av" id="av-stats">
+      <div class="topb"><h1>📊 Statistiques</h1></div>
+      <div class="kgrid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="kc"><div class="klbl">Chiffre d'affaires</div><div class="kval g" id="s-ca">0 €</div></div>
+        <div class="kc"><div class="klbl">Poids total</div><div class="kval y" id="s-po">0 kg</div></div>
+        <div class="kc"><div class="klbl">Collectes domicile</div><div class="kval b" id="s-do">0</div></div>
+      </div>
+      <div class="grid2" style="margin-top:18px">
+        <div class="bx" style="padding:22px"><h3 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:18px">Par service</h3><div id="s-srv"></div></div>
+        <div class="bx" style="padding:22px"><h3 style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:18px">Top clients</h3><div id="s-top"></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+</div><!-- /admin -->
+
+<!-- MODAL CLIENT -->
+<div class="mo" id="moCli" onclick="closeMO('moCli',event)">
+  <div class="md">
+    <h2><span id="mTitle">+ Nouveau client</span><button class="mx" onclick="closeMO('moCli')">✕</button></h2>
+    <div class="mfr">
+      <div class="mfg"><label>Prénom *</label><input id="m-pre" placeholder="Jean"></div>
+      <div class="mfg"><label>Nom *</label><input id="m-nom" placeholder="Mbemba"></div>
+    </div>
+    <div class="mfr">
+      <div class="mfg"><label>Téléphone *</label><input id="m-tel" type="tel" placeholder="+33 6 00 00 00 00"></div>
+      <div class="mfg"><label>WhatsApp</label><input id="m-wa" type="tel" placeholder="+33 6 00 00 00 00"></div>
+    </div>
+    <div class="mfg"><label>Email</label><input id="m-em" type="email" placeholder="jean@exemple.fr"></div>
+    <div class="mfr">
+      <div class="mfg"><label>Pays *</label><select id="m-pa"><option>France</option><option>Congo</option></select></div>
+      <div class="mfg"><label>Ville</label><input id="m-vi" placeholder="Chambray-lès-Tours"></div>
+    </div>
+    <div class="mfg"><label>Adresse</label><input id="m-ad" placeholder="37170 Chambray-lès-Tours…"></div>
+    <div class="mfr">
+      <div class="mfg"><label>Service habituel</label><select id="m-sv"><option>Express</option><option>Essentiel</option><option>Alimentation</option><option>Documents</option><option>Entreprise</option></select></div>
+      <div class="mfg"><label>Statut</label><select id="m-st"><option>Actif</option><option>En attente</option><option>En cours</option><option>Livré</option></select></div>
+    </div>
+    <div class="mfr">
+      <div class="mfg"><label>Destinataire (nom)</label><input id="m-dn" placeholder="Marie Moukala"></div>
+      <div class="mfg"><label>Tél destinataire</label><input id="m-dt" placeholder="067 xxx xxx"></div>
+    </div>
+    <div class="mfg"><label>Adresse destinataire</label><input id="m-da" placeholder="Quartier SIC, Pointe-Noire…"></div>
+    <div class="mfg"><label>Collecte domicile</label><select id="m-do"><option value="Non">Non</option><option value="Retrait (25€)">Retrait (25€)</option><option value="Livraison (25€)">Livraison (25€)</option><option value="Retrait+Livraison (50€)">Retrait+Livraison (50€)</option></select></div>
+    <div class="mfg"><label>Notes internes</label><textarea id="m-no" placeholder="Historique, préférences…"></textarea></div>
+    <div class="mfoot"><button class="btn btno" onclick="closeMO('moCli')">Annuler</button><button class="btn btng" onclick="saveC()">Enregistrer</button></div>
+  </div>
+</div>
+
+<!-- MODAL COLIS -->
+<div class="mo" id="moCo" onclick="closeMO('moCo',event)">
+  <div class="md">
+    <h2><span>📦 Nouveau colis</span><button class="mx" onclick="closeMO('moCo')">✕</button></h2>
+    <div class="mfg"><label>Client *</label><select id="c-cl"></select></div>
+    <div class="mfr">
+      <div class="mfg"><label>Direction</label><select id="c-di"><option value="🇫🇷→🇨🇬">France → Congo</option><option value="🇨🇬→🇫🇷">Congo → France</option></select></div>
+      <div class="mfg"><label>Service</label><select id="c-sv" onchange="calcM()"><option value="Express" data-p="18">Express (18€/kg)</option><option value="Essentiel" data-p="10">Essentiel (10€/kg)</option><option value="Alimentation" data-p="12">Alimentation (12€/kg)</option><option value="Documents" data-p="35">Documents (35€)</option><option value="Entreprise" data-p="0">Entreprise</option></select></div>
+    </div>
+    <div class="mfr">
+      <div class="mfg"><label>Poids (kg)</label><input type="number" id="c-po" placeholder="5" min="0.5" step="0.5" oninput="calcM()"></div>
+      <div class="mfg"><label>Collecte domicile</label><select id="c-do" onchange="calcM()"><option value="0">Non</option><option value="25">Retrait (+25€)</option><option value="25">Livraison (+25€)</option><option value="50">Retrait+Livraison (+50€)</option></select></div>
+    </div>
+    <div class="mfg"><label>Montant estimé</label><div id="c-mt" style="background:rgba(0,184,107,.1);border:1px solid rgba(0,184,107,.3);border-radius:8px;padding:10px 12px;font-family:'Space Mono',monospace;font-size:1rem;color:var(--v);font-weight:700;">— €</div></div>
+    <div class="mfr">
+      <div class="mfg"><label>Date</label><input type="date" id="c-da"></div>
+      <div class="mfg"><label>Statut</label><select id="c-st"><option>En attente</option><option>En cours</option><option>Transit</option><option>Livré</option></select></div>
+    </div>
+    <div class="mfg"><label>Contenu</label><textarea id="c-co" placeholder="Vêtements, manioc…"></textarea></div>
+    <div class="mfoot"><button class="btn btno" onclick="closeMO('moCo')">Annuler</button><button class="btn btng" onclick="saveCo()">Enregistrer</button></div>
+  </div>
+</div>
+
+<!-- FICHE -->
+<div class="fo" id="ficheOv" onclick="cFiche(event)">
+  <div class="fp" id="ficheP"></div>
+</div>
+
+<a href="#" class="wa" onclick="openWA('wa');return false;" title="WhatsApp">💬</a>
+<div class="toast" id="toast"></div>
+
+<script>
+let clients=[],colis=[],editId=null;
+function gid(p){return p+'-'+Date.now().toString(36).toUpperCase();}
+
+// PAGE NAV
+function goSite(){document.getElementById('pg-site').classList.add('on');document.getElementById('pg-admin').classList.remove('on');window.scrollTo(0,0);}
+function goAdmin(){document.getElementById('pg-admin').classList.add('on');document.getElementById('pg-site').classList.remove('on');rClients();updK();}
+function sc(id){const el=document.querySelector(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+
+// ADMIN TABS
+function aview(v){
+  ['clients','colis','stats'].forEach(x=>{document.getElementById('av-'+x).classList.toggle('on',x===v);});
+  document.querySelectorAll('.sbi').forEach((el,i)=>{el.classList.toggle('on',['clients','colis','stats'][i]===v);});
+  if(v==='colis')rColis();if(v==='stats')rStats();
+}
+
+// TOAST
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
+
+// KPI
+function updK(){
+  document.getElementById('k-tot').textContent=clients.length;
+  const now=new Date();
+  document.getElementById('k-mo').textContent=colis.filter(c=>{const d=new Date(c.date);return d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear();}).length;
+  document.getElementById('k-fr').textContent=clients.filter(c=>c.pays==='France').length;
+  document.getElementById('k-cg').textContent=clients.filter(c=>c.pays==='Congo').length;
+}
+
+// BADGES
+function bSt(s){const m={Actif:'bv','En cours':'bb2',Livré:'bv','En attente':'by2',Transit:'bo2','Annulé':'br2'};return`<span class="bdg ${m[s]||'by2'}">${s}</span>`;}
+function bSv(s){const m={Express:'bb2',Essentiel:'bv',Alimentation:'bo2',Documents:'by2',Entreprise:'br2'};return`<span class="bdg ${m[s]||'bv'}">${s}</span>`;}
+
+// RENDER CLIENTS
+function rClients(){
+  const q=(document.getElementById('srch').value||'').toLowerCase();
+  const fp=document.getElementById('fP').value;
+  const fs=document.getElementById('fS').value;
+  const fst=document.getElementById('fSt').value;
+  const f=clients.filter(c=>{
+    const t=(c.pre+c.nom+c.tel+c.em+c.vi).toLowerCase();
+    return(!q||t.includes(q))&&(!fp||c.pays===fp)&&(!fs||c.sv===fs)&&(!fst||c.st===fst);
+  });
+  document.getElementById('cnt').textContent=f.length+' client(s)';
+  const tb=document.getElementById('ctb');
+  if(!f.length){tb.innerHTML='';document.getElementById('cempt').style.display='';return;}
+  document.getElementById('cempt').style.display='none';
+  tb.innerHTML=f.map(c=>{
+    const fl=c.pays==='France'?'🇫🇷':'🇨🇬';
+    const nb=colis.filter(x=>x.cid===c.id).length;
+    return`<tr><td><div class="cn">${c.pre} ${c.nom}</div><div class="cid">${c.id} · ${nb} colis</div></td><td>${c.tel}</td><td>${fl} ${c.pays}</td><td>${bSv(c.sv)}</td><td style="color:rgba(255,255,255,.4);font-size:.8rem;">${c.last||'—'}</td><td>${bSt(c.st)}</td><td><div class="abtns"><button class="btn btnb btnsm" onclick="oFiche('${c.id}')">👁 Fiche</button><button class="btn btno btnsm" onclick="editC('${c.id}')">✏️</button><button class="btn btnr btnsm" onclick="delC('${c.id}')">🗑</button></div></td></tr>`;
+  }).join('');
+  updK();
+}
+
+// CLIENT MODAL
+function openCM(id){
+  editId=id||null;
+  document.getElementById('mTitle').textContent=id?'✏️ Modifier':'+ Nouveau client';
+  const fields=['pre','nom','tel','wa','em','vi','ad','dn','dt','da','no'];
+  if(id){
+    const c=clients.find(x=>x.id===id);
+    fields.forEach(f=>{const el=document.getElementById('m-'+f);if(el)el.value=c[f]||'';});
+    document.getElementById('m-pa').value=c.pays;
+    document.getElementById('m-sv').value=c.sv;
+    document.getElementById('m-st').value=c.st;
+    document.getElementById('m-do').value=c.dom||'Non';
+  }else{
+    fields.forEach(f=>{const el=document.getElementById('m-'+f);if(el)el.value='';});
+    document.getElementById('m-pa').value='France';
+    document.getElementById('m-sv').value='Express';
+    document.getElementById('m-st').value='Actif';
+    document.getElementById('m-do').value='Non';
+  }
+  document.getElementById('moCli').classList.add('open');
+}
+function editC(id){openCM(id);}
+function closeMO(id,e){if(e&&e.target.id!==id)return;document.getElementById(id).classList.remove('open');}
+function saveC(){
+  const pre=document.getElementById('m-pre').value.trim();
+  const nom=document.getElementById('m-nom').value.trim();
+  const tel=document.getElementById('m-tel').value.trim();
+  if(!pre||!nom||!tel){toast('❌ Prénom, nom et téléphone obligatoires');return;}
+  const data={pre,nom,tel,wa:document.getElementById('m-wa').value.trim(),em:document.getElementById('m-em').value.trim(),pays:document.getElementById('m-pa').value,vi:document.getElementById('m-vi').value.trim(),ad:document.getElementById('m-ad').value.trim(),sv:document.getElementById('m-sv').value,st:document.getElementById('m-st').value,dn:document.getElementById('m-dn').value.trim(),dt:document.getElementById('m-dt').value.trim(),da:document.getElementById('m-da').value.trim(),dom:document.getElementById('m-do').value,no:document.getElementById('m-no').value.trim()};
+  if(editId){const i=clients.findIndex(x=>x.id===editId);clients[i]={...clients[i],...data};toast('✅ Client mis à jour !');}
+  else{data.id=gid('CLI');data.created=new Date().toLocaleDateString('fr-FR');data.last='';clients.push(data);toast('✅ Client ajouté !');}
+  closeMO('moCli');rClients();
+}
+function delC(id){if(!confirm('Supprimer ce client ?'))return;clients=clients.filter(x=>x.id!==id);rClients();toast('🗑 Client supprimé.');}
+
+// FICHE
+function oFiche(id){
+  const c=clients.find(x=>x.id===id);if(!c)return;
+  const init=(c.pre[0]||'')+(c.nom[0]||'');
+  const fl=c.pays==='France'?'🇫🇷':'🇨🇬';
+  const cc=colis.filter(x=>x.cid===id);
+  document.getElementById('ficheP').innerHTML=`
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;">
+      <div><div class="fav">${init.toUpperCase()}</div><div class="fnm">${c.pre} ${c.nom}</div><div class="fci">${c.id} · ${fl} ${c.pays}</div><div style="margin-top:9px">${bSt(c.st)} ${bSv(c.sv)}</div></div>
+      <button onclick="document.getElementById('ficheOv').classList.remove('open')" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,.4);font-size:1.3rem">✕</button>
+    </div>
+    <div class="fsec"><h4>📞 Contact</h4>
+      <div class="fr2"><span class="fl">Téléphone</span><span class="fv">${c.tel}</span></div>
+      ${c.wa?`<div class="fr2"><span class="fl">WhatsApp</span><span class="fv">${c.wa}</span></div>`:''}
+      ${c.em?`<div class="fr2"><span class="fl">Email</span><span class="fv">${c.em}</span></div>`:''}
+      ${c.vi?`<div class="fr2"><span class="fl">Ville</span><span class="fv">${c.vi}</span></div>`:''}
+    </div>
+    <div class="fsec"><h4>📦 Destinataire</h4>
+      <div class="fr2"><span class="fl">Nom</span><span class="fv">${c.dn||'—'}</span></div>
+      <div class="fr2"><span class="fl">Tél</span><span class="fv">${c.dt||'—'}</span></div>
+      <div class="fr2"><span class="fl">Adresse</span><span class="fv">${c.da||'—'}</span></div>
+    </div>
+    <div class="fsec"><h4>🚐 Infos</h4>
+      <div class="fr2"><span class="fl">Collecte</span><span class="fv">${c.dom||'Non'}</span></div>
+      <div class="fr2"><span class="fl">Client depuis</span><span class="fv">${c.created||'—'}</span></div>
+    </div>
+    ${c.no?`<div class="fsec"><h4>📝 Notes</h4><p style="color:rgba(255,255,255,.5);font-size:.83rem;line-height:1.6">${c.no}</p></div>`:''}
+    <div class="fsec"><h4>📦 Colis (${cc.length})</h4>
+      ${cc.length?cc.map(x=>`<div class="cmin"><div class="cref">${x.ref}</div><div class="cinf">${x.dir} · ${x.sv} · ${x.po||'?'}kg · ${x.mt||'?'}€ · ${bSt(x.st)}</div></div>`).join(''):'<p style="color:rgba(255,255,255,.3);font-size:.82rem">Aucun colis.</p>'}
+    </div>
+    <div style="display:flex;gap:9px">
+      <button class="btn btno" style="flex:1" onclick="document.getElementById('ficheOv').classList.remove('open');editC('${id}')">✏️ Modifier</button>
+      <button class="btn btng" style="flex:1" onclick="document.getElementById('ficheOv').classList.remove('open');openCoM('${id}')">+ Colis</button>
+    </div>`;
+  document.getElementById('ficheOv').classList.add('open');
+}
+function cFiche(e){if(e.target.id==='ficheOv')document.getElementById('ficheOv').classList.remove('open');}
+
+// COLIS MODAL
+function openCoM(cid){
+  const sel=document.getElementById('c-cl');
+  sel.innerHTML=clients.length?clients.map(c=>`<option value="${c.id}">${c.pre} ${c.nom} (${c.pays})</option>`).join(''):'<option>— Aucun client —</option>';
+  if(cid)sel.value=cid;
+  document.getElementById('c-da').value=new Date().toISOString().split('T')[0];
+  ['c-po','c-co'].forEach(x=>document.getElementById(x).value='');
+  document.getElementById('c-st').value='En attente';
+  document.getElementById('c-sv').value='Express';
+  document.getElementById('c-do').value='0';
+  calcM();
+  document.getElementById('moCo').classList.add('open');
+}
+function calcM(){
+  const sel=document.getElementById('c-sv');
+  const p=parseFloat(sel.options[sel.selectedIndex].dataset.p||0);
+  const po=parseFloat(document.getElementById('c-po').value)||0;
+  const do2=parseFloat(document.getElementById('c-do').value)||0;
+  const tot=sel.value==='Documents'?p+do2:(p*po)+do2;
+  document.getElementById('c-mt').textContent=tot>0?tot.toFixed(2)+' €':'— €';
+}
+function saveCo(){
+  const cid=document.getElementById('c-cl').value;
+  if(!cid){toast('❌ Sélectionnez un client');return;}
+  const sel=document.getElementById('c-sv');
+  const p=parseFloat(sel.options[sel.selectedIndex].dataset.p||0);
+  const po=parseFloat(document.getElementById('c-po').value)||0;
+  const do2=parseFloat(document.getElementById('c-do').value)||0;
+  const mt=sel.value==='Documents'?p+do2:(p*po)+do2;
+  const e={ref:gid('AEX'),cid,dir:document.getElementById('c-di').value,sv:sel.value,po:document.getElementById('c-po').value,mt:mt.toFixed(2),dom:do2>0,date:document.getElementById('c-da').value,st:document.getElementById('c-st').value,co:document.getElementById('c-co').value.trim()};
+  colis.push(e);
+  const ci=clients.findIndex(x=>x.id===cid);if(ci>=0)clients[ci].last=e.date;
+  closeMO('moCo');rClients();rColis();toast('✅ Colis : '+e.ref);
+}
+
+// RENDER COLIS
+function rColis(){
+  document.getElementById('coCnt').textContent=colis.length+' colis';
+  const tb=document.getElementById('cotb');
+  if(!colis.length){tb.innerHTML='';document.getElementById('coempt').style.display='';return;}
+  document.getElementById('coempt').style.display='none';
+  tb.innerHTML=[...colis].reverse().map(c=>{
+    const cl=clients.find(x=>x.id===c.cid);
+    return`<tr><td><span style="font-family:'Space Mono',monospace;font-size:.72rem;color:var(--v)">${c.ref}</span></td><td>${cl?cl.pre+' '+cl.nom:'—'}</td><td style="font-size:.82rem">${c.dir}</td><td>${bSv(c.sv)}</td><td>${c.po||'—'} kg</td><td style="color:var(--v);font-family:'Space Mono',monospace">${c.mt||'—'} €</td><td>${bSt(c.st)}</td><td style="color:rgba(255,255,255,.4);font-size:.8rem">${c.date||'—'}</td></tr>`;
+  }).join('');
+}
+
+// STATS
+function rStats(){
+  const ca=colis.reduce((s,c)=>s+parseFloat(c.mt||0),0);
+  const po=colis.reduce((s,c)=>s+parseFloat(c.po||0),0);
+  document.getElementById('s-ca').textContent=ca.toFixed(2)+' €';
+  document.getElementById('s-po').textContent=po.toFixed(1)+' kg';
+  document.getElementById('s-do').textContent=colis.filter(c=>c.dom).length;
+  const bS={};colis.forEach(c=>{bS[c.sv]=(bS[c.sv]||0)+1;});
+  document.getElementById('s-srv').innerHTML=Object.entries(bS).length?Object.entries(bS).sort((a,b)=>b[1]-a[1]).map(([s,n])=>`<div style="display:flex;justify-content:space-between;margin-bottom:11px">${bSv(s)}<span style="font-family:'Space Mono',monospace;color:var(--v)">${n}</span></div>`).join(''):'<p style="color:rgba(255,255,255,.3);font-size:.85rem">Aucun colis.</p>';
+  const bC={};colis.forEach(c=>{bC[c.cid]=(bC[c.cid]||0)+1;});
+  const top=Object.entries(bC).sort((a,b)=>b[1]-a[1]).slice(0,5);
+  document.getElementById('s-top').innerHTML=top.length?top.map(([id,n])=>{const cl=clients.find(x=>x.id===id);return`<div style="display:flex;justify-content:space-between;margin-bottom:11px"><span style="font-weight:600">${cl?cl.pre+' '+cl.nom:id}</span><span style="font-family:'Space Mono',monospace;color:var(--v)">${n}</span></div>`;}).join(''):'<p style="color:rgba(255,255,255,.3);font-size:.85rem">Aucun client actif.</p>';
+}
+
+// EXPORT CSV
+function expCSV(){
+  if(!clients.length){toast('❌ Aucun client à exporter');return;}
+  const h=['ID','Prénom','Nom','Tél','WhatsApp','Email','Pays','Ville','Service','Statut','Dest Nom','Dest Tél','Dest Adresse','Collecte','Nb Colis','Créé le'];
+  const rows=clients.map(c=>[c.id,c.pre,c.nom,c.tel,c.wa||'',c.em||'',c.pays,c.vi||'',c.sv,c.st,c.dn||'',c.dt||'',c.da||'',c.dom||'Non',colis.filter(x=>x.cid===c.id).length,c.created||'']);
+  const csv=[h,...rows].map(r=>r.join(',')).join('\n');
+  const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);a.download='afroexpress_'+new Date().toISOString().slice(0,10)+'.csv';a.click();
+  toast('✅ Export CSV téléchargé !');
+}
+
+// TRACKER
+const pkgs={'AEX-2026-FR-47291':{s:2,d:'19 Mai 2026 — 14:32',steps:['Enlèvement FR','Dédouanement','Transit aérien','Arrivée Congo','Livraison']},'AEX-2026-CG-11042':{s:4,d:'18 Mai 2026 — 09:15',steps:['Enlèvement CG','Dédouanement','Transit aérien','Arrivée France','Livraison']},'AEX-2026-FR-55001':{s:0,d:'20 Mai 2026 — 08:00',steps:['Enlèvement FR','Dédouanement','Transit aérien','Arrivée Congo','Livraison']}};
+function track(){
+  const v=document.getElementById('trki').value.trim().toUpperCase();
+  const p=pkgs[v];const r=document.getElementById('trkr');
+  if(!p){toast('❌ Numéro introuvable. Vérifiez votre référence.');return;}
+  document.getElementById('trkd').textContent=p.d;
+  document.getElementById('trks').innerHTML=p.steps.map((s,i)=>{
+    const c=i<p.s?'done':i===p.s?'cur':'';const l=i<=p.s?'done':'';
+    return`<div class="tstep"><div class="tdot ${c}">${i<p.s?'✓':i===p.s?'●':''}</div><div class="tlbl ${l}">${s}</div></div>`;
+  }).join('');
+  r.classList.add('on');toast('📦 Colis trouvé !');
+}
+document.getElementById('trki').addEventListener('keypress',e=>{if(e.key==='Enter')track();});
+
+// MOBILE NAV
+function toggleMenu(){
+  const m=document.getElementById('mobMenu');
+  m.classList.toggle('open');
+}
+function closeMob(){document.getElementById('mobMenu').classList.remove('open');}
+function mobSc(id){closeMob();setTimeout(()=>sc(id),100);}
+
+// WHATSAPP MODAL
+function openWA(source){
+  // Récupérer les infos du formulaire devis
+  const inputs = document.querySelectorAll('.dform input, .dform select, .dform textarea');
+  const nom    = inputs[0]?.value || '';
+  const tel    = inputs[1]?.value || '';
+  const email  = inputs[2]?.value || '';
+  const dir    = inputs[3]?.value || '';
+  const type   = inputs[4]?.value || '';
+  const poids  = inputs[5]?.value || '';
+  const formule= inputs[6]?.value || '';
+  const collecte=inputs[7]?.value || '';
+  const notes  = inputs[8]?.value || '';
+
+  let msg = '';
+  if(source === 'devis'){
+    msg = `Bonjour AfroExpress ! 👋\n\nJe souhaite un devis pour un envoi :\n\n`;
+    if(nom)     msg += `👤 Nom : ${nom}\n`;
+    if(tel)     msg += `📱 Tél : ${tel}\n`;
+    if(email)   msg += `📧 Email : ${email}\n`;
+    if(dir)     msg += `🗺 Direction : ${dir}\n`;
+    if(type)    msg += `📦 Type de colis : ${type}\n`;
+    if(poids)   msg += `⚖️ Poids estimé : ${poids} kg\n`;
+    if(formule) msg += `🚀 Formule : ${formule}\n`;
+    if(collecte && collecte !== 'Non') msg += `🚐 Collecte domicile : ${collecte}\n`;
+    if(notes)   msg += `📝 Notes : ${notes}\n`;
+    msg += `\nMerci !`;
+  } else {
+    msg = `Bonjour AfroExpress ! 👋\nJe souhaite obtenir des informations sur vos services d'expédition France ↔ Congo.`;
+  }
+
+  const encoded = encodeURIComponent(msg);
+  document.getElementById('waFR').href = `https://wa.me/33758926963?text=${encoded}`;
+  document.getElementById('waCG').href = `https://wa.me/242067303239?text=${encoded}`;
+  document.getElementById('waModal').classList.add('open');
+}
+
+// FAQ
+function tfaq(el){const it=el.parentElement;const w=it.classList.contains('open');document.querySelectorAll('.fi.open').forEach(i=>i.classList.remove('open'));if(!w)it.classList.add('open');}
+
+// DEVIS (ancien — gardé pour compat)
+function submitDevis(){openWA('devis');}
+
+rClients();updK();
+</script>
+</body>
+</html>
